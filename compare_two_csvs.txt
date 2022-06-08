@@ -1,0 +1,33 @@
+import pandas as pd
+
+url = 'https://gist.githubusercontent.com/kevin336/acbb2271e66c10a5b73aacf82ca82784/raw/e38afe62e088394d61ed30884dd50a6826eee0a8/employees.csv'
+df1 = pd.read_csv(url, index_col=0)
+df2 = pd.read_csv(url, index_col=0)
+# if we just need to check if two csvs are same or not we can follow the below logic ...it is fast and reliable
+if df1.equals(df2):
+    print("both CSVs are same")
+    
+# if we need to get more information ...i.e at which point values are different or if columns are different or some rows are missing...
+
+is_shape_same=True
+if not df1.equals(df2):
+    if df1.shape[0]!=df2.shape[0]:
+        print("Rows of both CSVs are not equal")
+        is_shape_same=False
+    if df1.shape[1]!=df2.shape[1]:
+        print("columns of both CSVs are not equal")
+        is_shape_same==False
+    if is_shape_same:
+        df_all = df1.merge(df2, on=list(df1.columns), 
+                           how='left', indicator=True)
+        df_all.rename(columns = {'_merge':'change_status'}, inplace = True)
+        change_status_list=df_all['change_status']
+
+
+        for i in range(0,len(change_status_list)):
+            if "left_only" == change_status_list[i]:
+                print("row index",i+1,"is different on df1")
+            
+        
+else:
+    print("Both CSVs are Same")
