@@ -1,0 +1,30 @@
+Case 1: When one of ACI is running and next operations takes place using other ACI
+
+
+1.Make a dumpy variable temp and store actual list of files
+2.loop-- condition - if temp list is not empty and active aci is greater than zero
+    1.check if any aci is already being killed or not
+        if Yes - substract killed ACIs from active_aci variable
+        if no - then active_aci value is same as declared earlier
+    2. check  length of temp list
+        if less than active_aci then apply operations on whole length of temp list and pop indexs on which operation is performed
+        if greater than active_aci then apply operation on length of active_aci and pop index on which operation is performed
+
+
+3. These operations in  loop are executed until length of temp list is zero
+
+
+
+Case 2:
+
+1.Make a dumpy variable temp and store actual list of files
+2.loop-- condition - if temp list is not empty and active aci is greater than zero
+    1.check if any aci is already being killed or not
+        if Yes - Stop or pause the next operation until all ACI are not running
+        if no -   Continue with next operation
+    2. check  length of temp list
+        if less than active_aci then apply operations on whole length of temp list and pop indexes on which operation is performed
+        if greater than active_aci then apply operation on length of active_aci and pop index on which operation is performed
+
+
+3. These operations in  loop are executed until length of temp list is zero
