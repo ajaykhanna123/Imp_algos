@@ -1,0 +1,26 @@
+Given string str, the task is to check whether the given string is valid SSN (Social Security Number) or not by using Regular Expression.
+The valid SSN (Social Security Number) must satisfy the following conditions:
+
+It should have 9 digits.
+It should be divided into 3 parts by hyphen (-).
+The first part should have 3 digits and should not be 000, 666, or between 900 and 999.
+The second part should have 2 digits and it should be from 01 to 99.
+The third part should have 4 digits and it should be from 0001 to 9999.
+
+
+
+Input: str = “856-45-6789”;
+Output: true
+Explanation: The given string satisfies all the above mentioned conditions. Therefore, it is a valid SSN (Social Security Number).
+
+Input: str = “000-45-6789”;
+Output: false
+Explanation: The given string starts with 000. Therefore, it is not a valid SSN (Social Security Number).
+
+Input: str = “856-452-6789”;
+Output: false
+Explanation: The second part of this string has 3 digits. Therefore, it is not a valid SSN (Social Security Number).
+
+Input: str = “856-45-0000”;
+Output: false
+Explanation: The third part of this string is 0000. Therefore, it is not a valid SSN (Social Security Number)
