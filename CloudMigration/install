@@ -1,1 +1,11 @@
 https://colab.research.google.com/drive/1G4eTyDLrmaZ8UhvtQ_ljipZVovjSv7qT?usp=sharing
+
+
+
+modules:
+pip install spark-nlp==3.4.4
+pip install --upgrade spark-nlp-jsl==3.5.3 --user --extra-index-url https://pypi.johnsnowlabs.com/3.5.3-fdea8bcd1654146959684d436e1f561f30657622
+pip install --upgrade --no-dependencies spark-ocr==3.14.0+spark30 --user --extra-index-url https://pypi.johnsnowlabs.com/3.14.0-8ded606714333fd9fbc414eaac6c5b9a12eeae97
+pip install --upgrade --no-dependencies spark-ocr==3.14.0+spark30 --user --extra-index-url https://pypi.johnsnowlabs.com/3.14.0-8ded606714333fd9fbc414eaac6c5b9a12eeae97
+pip install nlu pyspark==3.0.1
+pip install spark-nlp-display
