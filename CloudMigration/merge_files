@@ -1,0 +1,35 @@
+import os
+from azure.storage.blob import BlockBlobService
+import pandas as pd
+
+ACCOUNT_NAME = "<Your_ACCOUNT_NAME>"
+ACCOUNT_KEY = "<YOUR_ACCOUNT_KEY>"
+CONTAINER_NAME = "<YOUR_CONTAINER_NAME>"
+LOCAL_BLOB_PATH = "C:\\<YOUR_PATH>\\downloadedfiles"
+
+blob_service = BlockBlobService(ACCOUNT_NAME, ACCOUNT_KEY)
+
+# Lists All Blobs which has a prefic of part-
+print("\nList blobs in the container")
+generator = blob_service.list_blobs(CONTAINER_NAME, prefix="part-")
+for blob in generator:
+    print("\t Blob name: " + blob.name)
+    
+# Downloading the blob to a folder
+list_of_csv_path=[]
+for blob in generator:
+    
+    # Adds blob name to the path 
+    fname = os.path.join(LOCAL_BLOB_PATH, blob.name)
+    list_of_csv_path.append(fname)
+    print(f'Downloading {blob.name} to {fname}')
+
+    # Downloading blob into file
+    blob_client = blob_service.get_blob_to_path(CONTAINER_NAME,blob.name,fname)
+# importing pandas
+
+
+# merging two csv files
+df = pd.concat(map(pd.read_csv, list_of_csv_path), ignore_index=True)
+print(df)
+
