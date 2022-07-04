@@ -1,3 +1,11 @@
 https://github.com/nedap/deidentify
 https://medium.com/nedap/de-identification-of-ehr-using-nlp-a270d40fc442
 https://github.com/nedap/deidentify/releases/tag/model_bilstmcrf_ons_large-v0.2.0
+
+
+https://microsoft.github.io/presidio/supported_entities/
+https://nlp.johnsnowlabs.com/2021/05/27/clinical_deidentification_en.html
+
+
+azure -   https://colab.research.google.com/drive/12s9aZu0CIN4RSE-BM_qyFoL02hVb9RMh?usp=sharing
+sparkNLP - https://colab.research.google.com/drive/1uva_n-4ecV3IWXZLJbHD_26SHsKN7I_-?usp=sharing
